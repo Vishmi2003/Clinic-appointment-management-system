@@ -31,7 +31,7 @@ public final class AppointmentStore {
     public void save(Appointment appointment) throws IOException, DuplicateAppointmentException {
         try (Connection connection = dataSource.getConnection()) {
             if (appointmentNumberExists(connection, appointment.getAppointmentNumber())) {
-                throw new DuplicateAppointmentException("That appointment  already exists.");
+                throw new DuplicateAppointmentException("That appointment number already exists.");
             }
             if (dentistSlotExists(connection, appointment)) {
                 throw new DuplicateAppointmentException("The selected dentist is already booked at that time.");
