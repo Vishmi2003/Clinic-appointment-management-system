@@ -26,8 +26,8 @@ public final class BillServlet extends HttpServlet {
             if (appointment.isPresent()) {
                 Appointment item = appointment.get();
                 request.setAttribute("appointment", item);
-                request.setAttribute("consultationFee", TreatmentCatalog.CONSULTATION_FEE);
-                request.setAttribute("treatmentFee", TreatmentCatalog.treatmentFee(item.getTreatmentType()));
+                request.setAttribute("consultationFees", TreatmentCatalog.CONSULTATION_FEE);
+                request.setAttribute("treatmentFees", TreatmentCatalog.treatmentFee(item.getTreatmentType()));
                 request.setAttribute("total", TreatmentCatalog.totalFor(item.getTreatmentType()));
                 request.setAttribute("invoiceDate", LocalDate.now());
             } else {
