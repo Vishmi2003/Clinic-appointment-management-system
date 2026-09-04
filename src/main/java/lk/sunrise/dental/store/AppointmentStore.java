@@ -56,7 +56,7 @@ public final class AppointmentStore {
         } catch (SQLIntegrityConstraintViolationException exception) {
             throw duplicateException(exception);
         } catch (SQLException exception) {
-            throw databaseFailure("save the appointment", exception);
+            throw databaseFailure("create the appointment", exception);
         }
     }
 
